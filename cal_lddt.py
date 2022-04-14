@@ -3,10 +3,12 @@ import numpy as np
 import os
 import MDAnalysis as mda
 
-# from fold.heads import compute_plddt
 eps=1e-8
 
 def get_distogram(pdb_file):
+    """
+    modify select policy to get new distogram
+    """
     u = mda.Universe(pdb_file)
     ca = u.select_atoms("name CA")
     pos = ca.positions
