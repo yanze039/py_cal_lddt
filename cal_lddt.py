@@ -1,5 +1,4 @@
 import argparse
-import matplotlib.pyplot as plt
 import numpy as np
 import os
 import MDAnalysis as mda
@@ -32,11 +31,6 @@ def cal_lddt(ref, model, cutoff=15.):
     origin_contact = np.sum( boolean_contact ) - residue_length
     lddt = (contact_num1 + contact_num2 + contact_num3 + contact_num4) / (origin_contact * 4)
     return lddt
-
-def get_native_distogram(case_name):
-    disto_path = "/data/yanze/Protein_Score/cath-decoys-20220302-mod/distogram-tst"
-    data = np.load(os.path.join(disto_path, case_name+".npy"))
-    return data
 
 def main(args):
     native_distogram = get_distogram(args.native)
