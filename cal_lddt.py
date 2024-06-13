@@ -54,7 +54,7 @@ def main(args):
     lddt = cal_lddt(native_distogram, model_distogram, cutoff=args.cutoff)
     per_resi_lddt= cal_residue_lddt(ref, model, cutoff=args.cutoff)
     print("Global lDDT:", lddt)
-    print("Per-residue lDDT:\n", lddt)
+    print("Per-residue lDDT:\n", per_resi_lddt)
     return lddt
 
 
